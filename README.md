@@ -1,6 +1,6 @@
 # NestedScrollView
 NestedScrollView嵌套RecyclerView+Tablayout，实现滑动Tablayout吸顶效果
 
-todo:
-1，还未吸顶时，滑动底部RecyclerView时，你布局不能往上滑。
-2，滑动tablayout顶部布局到悬浮，底部RecyclerView不接着往上滑。
+1，滑动底部RecyclerView，先滑动ScrollView的滑动，悬浮吸顶后再进行RecyclerView的滑动。
+2，快速滑动ScrollView至吸顶时，底部RecyclerView进行惯性滑动。
+![Image text](https://github.com/xunyixiangchao/NestedScrollView/blob/master/img/nestedscrollview.gif)
