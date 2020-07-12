@@ -2,6 +2,7 @@ package com.lis.nestscrollviewandrecyclerview.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +33,16 @@ public class FixedDisabledScrollRecyclerView extends RecyclerView {
         setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         RecyclerAdapter adapter = new RecyclerAdapter(getBanner());
         setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent e) {
+        return false;
     }
 
     private List<String> getBanner() {
