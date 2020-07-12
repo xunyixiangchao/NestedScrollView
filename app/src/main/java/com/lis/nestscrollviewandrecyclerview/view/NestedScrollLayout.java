@@ -50,4 +50,15 @@ public class NestedScrollLayout extends NestedScrollView {
         //设置contentView的高度为全屏幕的高度，实现TabLayout顶部悬浮
         contentView.setLayoutParams(layoutParams);
     }
+
+    @Override
+    public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
+        //scrollview顶部滑动
+        //这里实现scrollview顶部没有隐藏时，滑动底部的RecyclerView时，scrollview滑动
+        boolean onScroll = dy > 0 && getScrollY() < topView.getMeasuredHeight();
+        if (onScroll) {
+            scrollBy(0, dy);
+            consumed[1] = dy;
+        }
+    }
 }
